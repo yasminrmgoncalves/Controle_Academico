@@ -1,0 +1,123 @@
+unit uPainelAluno;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Imaging.jpeg;
+
+type
+  TfrmPainelAluno = class(TForm)
+    pnlPrincipal: TPanel;
+    pnlTitulo: TPanel;
+    labelTit: TLabel;
+    img_icon: TImage;
+    btnRealizarInscricao: TButton;
+    Label2: TLabel;
+    pnlBottom: TPanel;
+    Label3: TLabel;
+    Label5: TLabel;
+    lblNome: TLabel;
+    lblDataNasc: TLabel;
+    gdDisciplinasAluno: TDBGrid;
+    cbAno: TComboBox;
+    cbPeriodo: TComboBox;
+    Label1: TLabel;
+    Label4: TLabel;
+    btnPesquisarDisciplinas: TButton;
+    pnlInformacoesDisciplina: TPanel;
+    Label6: TLabel;
+    lbNomeDisciplina: TLabel;
+    lbProfessorDisciplina: TLabel;
+    lbDiaSemana: TLabel;
+    lbSala: TLabel;
+    lbHorario: TLabel;
+    procedure btnRealizarInscricaoClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
+    procedure btnPesquisarDisciplinasClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure VerificaDisciplinas;
+  end;
+
+var
+  frmPainelAluno: TfrmPainelAluno;
+
+implementation
+
+uses
+  uInscricao, uDataModule, uPainelAdmin;
+
+{$R *.dfm}
+
+procedure TfrmPainelAluno.btnPesquisarClick(Sender: TObject);
+begin
+  VerificaDisciplinas;
+end;
+
+procedure TfrmPainelAluno.btnPesquisarDisciplinasClick(Sender: TObject);
+begin
+  VerificaDisciplinas;
+end;
+
+procedure TfrmPainelAluno.btnRealizarInscricaoClick(Sender: TObject);
+begin
+  DataModule1.sql_disciplinas_validas_.Close;
+  DataModule1.sql_disciplinas_validas_.ParamByName('id_aluno').AsInteger := frmPainelAdmin.id_aluno;
+  DataModule1.sql_disciplinas_validas_.Open;
+
+  while not Datamodule1.sql_disciplinas_validas_.Eof do
+  begin
+    frmInscricao.cbDisciplinas.Items.Add(DataModule1.sql_disciplinas_validas_nome_disciplina.AsString);
+    Datamodule1.sql_disciplinas_validas_.Next;
+  end;
+  frmInscricao.ShowModal;
+end;
+
+procedure TfrmPainelAluno.FormShow(Sender: TObject);
+var
+  i : Integer;
+begin
+  DataModule1.sql_aluno_.Close;
+  if frmPainelAdmin.admin = True then
+    DataModule1.sql_aluno_.ParamByName('id_aluno').AsInteger := frmPainelAdmin.id_aluno
+  else
+    DataModule1.sql_aluno_.ParamByName('id_aluno').AsInteger := DataModule1.sql_alunos_id_aluno.AsInteger;
+
+  DataModule1.sql_aluno_.Open;
+  lblNome.Caption := DataModule1.sql_aluno_nome_aluno.AsString;
+  lblDataNasc.Caption := DateTimeToStr(DataModule1.sql_aluno_nascimento_aluno.AsDateTime);
+
+  DataModule1.sql_periodo_ano_.Close;
+  DataModule1.sql_periodo_ano_.Open;
+  // montando combo de ano
+  while not Datamodule1.sql_periodo_ano_.Eof do
+  begin
+    cbAno.Items.Add(IntToStr(DataModule1.sql_periodo_ano_ano.AsInteger));
+    Datamodule1.sql_periodo_ano_.Next;
+  end;
+
+  //montando combo de semestre(periodo)
+  for i := 1 to 3-1 do
+    cbPeriodo.Items.Add(IntToSTr(i));
+
+  cbPeriodo.Text := '1';
+  cbAno.Text := '2024';
+  btnPesquisarDisciplinas.OnClick(self);
+end;
+
+procedure TfrmPainelAluno.VerificaDisciplinas;
+begin
+  DataModule1.sql_disciplinas_alunos_.Close;
+  DataModule1.sql_disciplinas_alunos_.ParamByName('id').AsInteger := frmPainelAdmin.id_aluno;
+  DataModule1.sql_disciplinas_alunos_.ParamByName('ano').AsInteger := StrToInt(cbAno.Text);
+  DataModule1.sql_disciplinas_alunos_.ParamByName('semestre').AsInteger := StrToInt(cbPeriodo.Text);
+  DataModule1.sql_disciplinas_alunos_.Open;
+  gdDisciplinasAluno.Refresh;
+end;
+
+end.

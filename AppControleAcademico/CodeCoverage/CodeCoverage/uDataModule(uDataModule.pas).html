@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Delphi CodeCoverage Coverage Report</title>
+<style type="text/css">
+body {max-width: max-content;margin: auto;}
+table {border-spacing:0;}
+table, td, th {border: 0;}
+td, th {background: white; margin: 0; padding: .5em 1em}
+table small { color: #777; }
+p, h1, h2, h3, th {font-family: verdana,arial,sans-serif; font-size: 10pt;}
+td {font-family: consolas,courier,monospace; font-size: 10pt;}
+thead, th {background: #808C98; color: white; }
+table th small { color: #ddd; }
+th[idx] {cursor: pointer; user-select: none;}
+table.o tr td:nth-child(1) {font-weight: bold;}
+table.o tr td:nth-child(2) {text-align: right;}
+table.o tr td {border-width: 1px;}
+table.s {width: calc(min(80em, 95vw));}
+table.s tr td {padding: .1em .5em; white-space: pre-wrap;}
+table.s tr td:first-child {text-align: right; font-weight: bold; vertical-align: top}
+table.s tr.notcovered td {background: #ddf;}
+table.s tr.nocodegen td {background: #ffe;}
+table.s tr.covered td {background: #cfc;}
+table.s tr.covered td:first-child {color: green;}
+table.s {border-width: 1px 0 1px 1px;}
+table.sum td { background-position: 50%; background-repeat: no-repeat; background-size: 90% 70%; }
+table.sum tr:nth-child(odd) td { background-color: #f4f4f4}
+table.sum tr:hover td, tr:hover td a { filter: invert(10%) }
+table.sum tr th {text-align:left; border: .5px solid #5d4e4c; height: 1em}
+table.sum tr td {text-align:right;}
+table.sum tr td:first-child {text-align:left;}
+table.sum thead th { position: sticky; top:0; }
+table.sum thead tr + tr th { position: sticky; top: calc(2.5em - 2px); }
+table.sum tfoot th { position: sticky; bottom:0; }
+table.sum tfoot th+th {text-align: right;}
+table.sum a, table.sum a:visited {color: #5d4e4c; text-decoration: none;}
+#nav {position: fixed;overflow: visible;left: min(calc(50% + 41em), calc(100% - 6em));padding: .1em .5em .1em .2em;background: white;box-shadow: 1px 1px 3px #888;}
+#nav div {opacity: .3; user-select: none; pointer-events: none;}
+#nav div.active {opacity: 1;	cursor: pointer;	pointer-events: initial;}
+#nav div.active:hover {color: #00A;}
+</style>
+</head>
+<body>
+<p>Coverage report for <bold>uDataModule (C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uDataModule.pas)</bold>.</p>
+<p>Generated at 17/06/2024 01:43:13 by <a href="https://github.com/DelphiCodeCoverage/DelphiCodeCoverage" target="_blank" title="DelphiCodeCoverage on GitHub">DelphiCodeCoverage</a> - an open source tool for Delphi Code Coverage.</p>
+<p>Statistics for C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uDataModule.pas</p>
+<table class="o"><tr><td>Number of lines covered<td>0<td rowspan=3 style="background: conic-gradient(#9fe098 0%, #eee 0%);width: 4.5em; border-radius: 50%"><tr><td>Number of lines with code gen<td>11<tr><td>Line coverage<td>0<small>.0</small>&nbsp;%</table>
+<br><br>
+<div id="nav"><div id="nav-prev">&#x25b2; Prev</div><div id="nav-next">&#x25bc; Next</div></div>
+<table class="s">
+<tr class="nocodegen"><td>1<td>unit uDataModule;
+<tr class="nocodegen"><td>2<td>
+<tr class="nocodegen"><td>3<td>interface
+<tr class="nocodegen"><td>4<td>
+<tr class="nocodegen"><td>5<td>uses
+<tr class="nocodegen"><td>6<td>  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+<tr class="nocodegen"><td>7<td>  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+<tr class="nocodegen"><td>8<td>  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
+<tr class="nocodegen"><td>9<td>  Data.DB, FireDAC.Comp.Client, FireDAC.Phys.MySQL, FireDAC.Phys.MySQLDef,
+<tr class="nocodegen"><td>10<td>  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
+<tr class="nocodegen"><td>11<td>  FireDAC.Comp.DataSet;
+<tr class="nocodegen"><td>12<td>
+<tr class="nocodegen"><td>13<td>type
+<tr class="nocodegen"><td>14<td>  TDataModule1 = class(TDataModule)
+<tr class="nocodegen"><td>15<td>    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+<tr class="nocodegen"><td>16<td>    sql_alunos_: TFDQuery;
+<tr class="nocodegen"><td>17<td>    FDTransaction1: TFDTransaction;
+<tr class="nocodegen"><td>18<td>    FDConnection1: TFDConnection;
+<tr class="nocodegen"><td>19<td>    ds_alunos: TDataSource;
+<tr class="nocodegen"><td>20<td>    sql_alunos_id_aluno: TFDAutoIncField;
+<tr class="nocodegen"><td>21<td>    sql_alunos_nome_aluno: TStringField;
+<tr class="nocodegen"><td>22<td>    sql_alunos_senha_aluno: TMemoField;
+<tr class="nocodegen"><td>23<td>    sql_alunos_nascimento_aluno: TDateField;
+<tr class="nocodegen"><td>24<td>    sql_disciplinas_: TFDQuery;
+<tr class="nocodegen"><td>25<td>    ds_disciplinas: TDataSource;
+<tr class="nocodegen"><td>26<td>    sql_disciplinas_id_disciplina: TFDAutoIncField;
+<tr class="nocodegen"><td>27<td>    sql_disciplinas_nome_disciplina: TStringField;
+<tr class="nocodegen"><td>28<td>    sql_disciplinas_professor_disciplina: TStringField;
+<tr class="nocodegen"><td>29<td>    sql_aluno_: TFDQuery;
+<tr class="nocodegen"><td>30<td>    sql_aluno_id_aluno: TFDAutoIncField;
+<tr class="nocodegen"><td>31<td>    sql_aluno_nome_aluno: TStringField;
+<tr class="nocodegen"><td>32<td>    sql_aluno_senha_aluno: TMemoField;
+<tr class="nocodegen"><td>33<td>    sql_aluno_nascimento_aluno: TDateField;
+<tr class="nocodegen"><td>34<td>    sql_disciplinas_dia_semana: TIntegerField;
+<tr class="nocodegen"><td>35<td>    sql_periodo_ano_: TFDQuery;
+<tr class="nocodegen"><td>36<td>    sql_periodo_ano_ano: TIntegerField;
+<tr class="nocodegen"><td>37<td>    sql_disciplinas_alunos_: TFDQuery;
+<tr class="nocodegen"><td>38<td>    sql_disciplinas_alunos_nome_aluno: TStringField;
+<tr class="nocodegen"><td>39<td>    sql_disciplinas_alunos_semestre: TIntegerField;
+<tr class="nocodegen"><td>40<td>    sql_disciplinas_alunos_ano: TIntegerField;
+<tr class="nocodegen"><td>41<td>    sql_disciplinas_alunos_qtd_aula: TIntegerField;
+<tr class="nocodegen"><td>42<td>    ds_disciplinas_alunos: TDataSource;
+<tr class="nocodegen"><td>43<td>    sql_disciplinas_alunos_nome_disciplina: TStringField;
+<tr class="nocodegen"><td>44<td>    sql_disciplinas_sala: TStringField;
+<tr class="nocodegen"><td>45<td>    sql_disciplinas_horario: TStringField;
+<tr class="nocodegen"><td>46<td>    sql_disciplinas_validas_: TFDQuery;
+<tr class="nocodegen"><td>47<td>    sql_disciplinas_validas_nome_disciplina: TStringField;
+<tr class="nocodegen"><td>48<td>    sql_livre: TFDQuery;
+<tr class="nocodegen"><td>49<td>    mDisciplinas_: TFDMemTable;
+<tr class="nocodegen"><td>50<td>    mDisciplinas_id_aluno: TIntegerField;
+<tr class="nocodegen"><td>51<td>    mDisciplinas_id_disciplina: TIntegerField;
+<tr class="nocodegen"><td>52<td>    mDisciplinas_semestre: TIntegerField;
+<tr class="nocodegen"><td>53<td>    mDisciplinas_ano: TIntegerField;
+<tr class="nocodegen"><td>54<td>    mDisciplinas_qtd_aula: TIntegerField;
+<tr class="nocodegen"><td>55<td>    mDisciplinas_dia_semana: TIntegerField;
+<tr class="nocodegen"><td>56<td>    mDisciplinas_aprovado: TBooleanField;
+<tr class="nocodegen"><td>57<td>    sql_disciplinas_qtd_aula: TIntegerField;
+<tr class="nocodegen"><td>58<td>    dsDisciplinas: TDataSource;
+<tr class="nocodegen"><td>59<td>    sql_lista_espera_: TFDQuery;
+<tr class="nocodegen"><td>60<td>    sql_RN02: TFDQuery;
+<tr class="nocodegen"><td>61<td>    sql_RN02alunos_disciplina: TLargeintField;
+<tr class="nocodegen"><td>62<td>    sql_RN00: TFDQuery;
+<tr class="nocodegen"><td>63<td>    sql_RN00id_aluno_disciplina: TFDAutoIncField;
+<tr class="nocodegen"><td>64<td>    sql_RN00id_aluno: TIntegerField;
+<tr class="nocodegen"><td>65<td>    sql_RN00id_disciplina: TIntegerField;
+<tr class="nocodegen"><td>66<td>    sql_RN00semestre: TIntegerField;
+<tr class="nocodegen"><td>67<td>    sql_RN00ano: TIntegerField;
+<tr class="nocodegen"><td>68<td>    sql_RN00qtd_aula: TIntegerField;
+<tr class="nocodegen"><td>69<td>    sql_RN00dia_semana: TIntegerField;
+<tr class="nocodegen"><td>70<td>    sql_RN00aprovado: TBooleanField;
+<tr class="nocodegen"><td>71<td>    sql_RN00id_disciplina_1: TIntegerField;
+<tr class="nocodegen"><td>72<td>    sql_RN00nome_disciplina: TStringField;
+<tr class="nocodegen"><td>73<td>    sql_RN00professor_disciplina: TStringField;
+<tr class="nocodegen"><td>74<td>    sql_RN00dia_semana_1: TIntegerField;
+<tr class="nocodegen"><td>75<td>    sql_RN00sala: TStringField;
+<tr class="nocodegen"><td>76<td>    sql_RN00horario: TStringField;
+<tr class="nocodegen"><td>77<td>    sql_RN00qtd_aula_1: TIntegerField;
+<tr class="nocodegen"><td>78<td>    sql_RN01: TFDQuery;
+<tr class="nocodegen"><td>79<td>    sql_RN01qtd_credito: TFMTBCDField;
+<tr class="nocodegen"><td>80<td>    sql_lista_espera_id_aluno: TIntegerField;
+<tr class="nocodegen"><td>81<td>    sql_lista_espera_id_disciplina: TIntegerField;
+<tr class="nocodegen"><td>82<td>    sql_lista_espera_posicao_lista: TIntegerField;
+<tr class="nocodegen"><td>83<td>    sql_aluno_disciplina_: TFDQuery;
+<tr class="nocodegen"><td>84<td>    sql_aluno_disciplina_id_aluno: TIntegerField;
+<tr class="nocodegen"><td>85<td>    sql_aluno_disciplina_id_disciplina: TIntegerField;
+<tr class="nocodegen"><td>86<td>    sql_aluno_disciplina_semestre: TIntegerField;
+<tr class="nocodegen"><td>87<td>    sql_aluno_disciplina_ano: TIntegerField;
+<tr class="nocodegen"><td>88<td>    sql_aluno_disciplina_qtd_aula: TIntegerField;
+<tr class="nocodegen"><td>89<td>    sql_aluno_disciplina_dia_semana: TIntegerField;
+<tr class="nocodegen"><td>90<td>    sql_aluno_disciplina_aprovado: TBooleanField;
+<tr class="nocodegen"><td>91<td>    dsListaEspera: TDataSource;
+<tr class="nocodegen"><td>92<td>    procedure DataModuleCreate(Sender: TObject);
+<tr class="nocodegen"><td>93<td>  private
+<tr class="nocodegen"><td>94<td>    { Private declarations }
+<tr class="nocodegen"><td>95<td>  public
+<tr class="nocodegen"><td>96<td>    { Public declarations }
+<tr class="nocodegen"><td>97<td>  end;
+<tr class="nocodegen"><td>98<td>
+<tr class="nocodegen"><td>99<td>var
+<tr class="nocodegen"><td>100<td>  DataModule1: TDataModule1;
+<tr class="nocodegen"><td>101<td>
+<tr class="nocodegen"><td>102<td>implementation
+<tr class="nocodegen"><td>103<td>
+<tr class="nocodegen"><td>104<td>{%CLASSGROUP 'Vcl.Controls.TControl'}
+<tr class="nocodegen"><td>105<td>
+<tr class="nocodegen"><td>106<td>{$R *.dfm}
+<tr class="nocodegen"><td>107<td>
+<tr class="nocodegen"><td>108<td>procedure TDataModule1.DataModuleCreate(Sender: TObject);
+<tr class="notcovered"><td>109<td>begin
+<tr class="notcovered"><td>110<td>  FDConnection1.Params.Database := 'db_qsw';
+<tr class="notcovered"><td>111<td>  FDConnection1.Params.UserName := 'root';
+<tr class="notcovered"><td>112<td>  FDConnection1.Params.Password := '';
+<tr class="nocodegen"><td>113<td>
+<tr class="notcovered"><td>114<td>  FDPhysMySQLDriverLink1.VendorLib := 'C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\Win32\Debug\lib\libmysql.dll';
+<tr class="notcovered"><td>115<td>  FDConnection1.Connected := True;
+<tr class="nocodegen"><td>116<td>
+<tr class="notcovered"><td>117<td>  if not mDisciplinas_.Active then
+<tr class="notcovered"><td>118<td>    mDisciplinas_.CreateDataset;
+<tr class="notcovered"><td>119<td>  if not sql_lista_espera_.Active then
+<tr class="notcovered"><td>120<td>    sql_lista_espera_.CreateDataset;
+<tr class="nocodegen"><td>121<td>
+<tr class="notcovered"><td>122<td>end;
+<tr class="nocodegen"><td>123<td>
+<tr class="nocodegen"><td>124<td>end.
+</table>
+<script>(function () {
+var starts = [],prev = document.getElementById("nav-prev"),next = document.getElementById("nav-next");
+(function () {
+var p;
+document.querySelectorAll("table.s tr").forEach(r => {
+if (r.classList.contains("notcovered")) {
+if (!p) starts.push(r);
+p = r;
+} else { p = null }
+})
+})();
+function findPrev() {
+var y = prev.getBoundingClientRect().top - 4;
+for (var i=starts.length-1; i>=0; i--) {
+if (starts[i].getBoundingClientRect().top < y) return starts[i]
+}
+}
+function findNext() {
+var y = next.getBoundingClientRect().top + 4;
+for (var i=0; i<starts.length; i++) {
+if (starts[i].getBoundingClientRect().top > y) return starts[i];
+}
+}
+function onScroll() {
+prev.setAttribute("class", findPrev() ? "active" : "");
+next.setAttribute("class", findNext() ? "active" : "");
+onScroll.pending = 0;
+}
+document.addEventListener("scroll", function() {
+if (!onScroll.pending) { onScroll.pending = requestAnimationFrame(onScroll) }
+});
+onScroll();
+function scrollTo(row) {
+if (row) window.scrollTo({ behavior: "smooth", top: window.scrollY+row.getBoundingClientRect().top-prev.getBoundingClientRect().top });
+}
+next.addEventListener("click", () => scrollTo(findNext()) );
+prev.addEventListener("click", () => scrollTo(findPrev()) );
+})();</script>
+<script>
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+const comparer = (idx, asc) => (a, b) => ((v1, v2) =>!isNaN(parseFloat(v1 || "-")) && !isNaN(parseFloat(v2 || "-")) ? parseFloat(v1)-parseFloat(v2) : v1.toString().localeCompare(v2))(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+document.querySelectorAll("thead th[idx]").forEach(th => th.addEventListener("click", (() => {
+	const table = th.closest("table").querySelector("tbody");
+	Array.from(table.querySelectorAll("tr"))
+		.sort(comparer(+th.getAttribute("idx"), this.asc = !this.asc))
+		.forEach(tr => table.appendChild(tr) );
+	})));
+</script>
+</body>
+</html>

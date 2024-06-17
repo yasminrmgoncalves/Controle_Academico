@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/06/16 08:56:14.000.627,C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\AppControleAcademicogrp.groupproj=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\Projects\ProjectGroup1.groupproj</Transaction>
+  </Transactions>
+	<Default.Personality>
+		<Projects ActiveProject="C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\UnitTest1\TestProjectCMD.dproj"/>
+	</Default.Personality>
+</BorlandProject>

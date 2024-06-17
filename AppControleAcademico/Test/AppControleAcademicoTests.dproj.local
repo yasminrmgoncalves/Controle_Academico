@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/06/16 09:01:31.000.954,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uInscricao.pas</Transaction>
+    <Transaction>2024/06/16 09:01:31.000.223,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\Test\TestuInscricao.pas</Transaction>
+    <Transaction>2024/06/16 09:16:05.000.252,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uDataModule.pas</Transaction>
+    <Transaction>2024/06/16 09:16:18.000.539,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uPainelAdmin.pas</Transaction>
+    <Transaction>2024/06/16 09:16:43.000.313,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uPainelAluno.pas</Transaction>
+  </Transactions>
+</BorlandProject>

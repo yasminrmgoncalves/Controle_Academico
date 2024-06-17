@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="no"?>
+<report>
+  <stats>
+    <packages value="2"/>
+    <classes value="2"/>
+    <methods value="14"/>
+    <srcfiles value="2"/>
+    <srclines value="166"/>
+    <totallines value="166"/>
+    <coveredlines value="34"/>
+    <coveredpercent value="20"/>
+  </stats>
+  <data>
+    <all name="all classes">
+      <coverage type="class, %" value="50%   (1/2)"/>
+      <coverage type="method, %" value="21%   (3/14)"/>
+      <coverage type="block, %" value="20%   (34/166)"/>
+      <coverage type="line, %" value="20%   (34/166)"/>
+      <package name="uInscricao">
+        <coverage type="class, %" value="100%   (1/1)"/>
+        <coverage type="method, %" value="23%   (3/13)"/>
+        <coverage type="block, %" value="22%   (34/155)"/>
+        <coverage type="line, %" value="22%   (34/155)"/>
+        <srcfile name="uInscricao.pas">
+          <coverage type="class, %" value="100%   (1/1)"/>
+          <coverage type="method, %" value="23%   (3/13)"/>
+          <coverage type="block, %" value="22%   (34/155)"/>
+          <coverage type="line, %" value="22%   (34/155)"/>
+          <class name="TfrmInscricao">
+            <coverage type="class, %" value="100%   (1/1)"/>
+            <coverage type="method, %" value="23%   (3/13)"/>
+            <coverage type="block, %" value="22%   (34/155)"/>
+            <coverage type="line, %" value="22%   (34/155)"/>
+            <method name="btnFinalizarInscricaoClick">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/6)"/>
+              <coverage type="line, %" value="0%   (0/6)"/>
+            </method>
+            <method name="VerificaRN01">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (11/11)"/>
+              <coverage type="line, %" value="100%   (11/11)"/>
+            </method>
+            <method name="PostDisciplinas">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/16)"/>
+              <coverage type="line, %" value="0%   (0/16)"/>
+            </method>
+            <method name="btnNaoClick">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/4)"/>
+            </method>
+            <method name="cbDisciplinasChange">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/16)"/>
+              <coverage type="line, %" value="0%   (0/16)"/>
+            </method>
+            <method name="VerificaRN00">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/12)"/>
+              <coverage type="line, %" value="0%   (0/12)"/>
+            </method>
+            <method name="VerificacoesRN">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/28)"/>
+              <coverage type="line, %" value="0%   (0/28)"/>
+            </method>
+            <method name="VerificaRN02">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (10/10)"/>
+              <coverage type="line, %" value="100%   (10/10)"/>
+            </method>
+            <method name="Panel1Click">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/3)"/>
+            </method>
+            <method name="CriaComponentesConexao">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (13/13)"/>
+              <coverage type="line, %" value="100%   (13/13)"/>
+            </method>
+            <method name="FormClose">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/4)"/>
+              <coverage type="line, %" value="0%   (0/4)"/>
+            </method>
+            <method name="btnAdicionarClick">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/15)"/>
+              <coverage type="line, %" value="0%   (0/15)"/>
+            </method>
+            <method name="btnListaEsperaClick">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/17)"/>
+              <coverage type="line, %" value="0%   (0/17)"/>
+            </method>
+          </class>
+        </srcfile>
+      </package>
+      <package name="uDataModule">
+        <coverage type="class, %" value="0%   (0/1)"/>
+        <coverage type="method, %" value="0%   (0/1)"/>
+        <coverage type="block, %" value="0%   (0/11)"/>
+        <coverage type="line, %" value="0%   (0/11)"/>
+        <srcfile name="uDataModule.pas">
+          <coverage type="class, %" value="0%   (0/1)"/>
+          <coverage type="method, %" value="0%   (0/1)"/>
+          <coverage type="block, %" value="0%   (0/11)"/>
+          <coverage type="line, %" value="0%   (0/11)"/>
+          <class name="TDataModule1">
+            <coverage type="class, %" value="0%   (0/1)"/>
+            <coverage type="method, %" value="0%   (0/1)"/>
+            <coverage type="block, %" value="0%   (0/11)"/>
+            <coverage type="line, %" value="0%   (0/11)"/>
+            <method name="DataModuleCreate">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/11)"/>
+              <coverage type="line, %" value="0%   (0/11)"/>
+            </method>
+          </class>
+        </srcfile>
+      </package>
+    </all>
+    <linehits>
+      <file name="uDataModule.pas">109=0;110=0;111=0;112=0;114=0;115=0;117=0;118=0;119=0;120=0;122=0</file>
+      <file name="uInscricao.pas">71=0;72=0;74=0;76=0;77=0;78=0;79=0;80=0;81=0;82=0;83=0;84=0;85=0;86=0;88=0;91=0;92=0;94=0;95=0;96=0;99=0;102=0;103=0;104=0;105=0;106=0;107=0;109=0;110=0;111=0;112=0;113=0;114=0;115=0;117=0;118=0;119=0;120=0;123=0;124=0;125=0;126=0;131=0;132=0;133=0;134=0;136=0;137=0;138=0;139=0;141=0;143=0;145=0;147=0;149=0;151=0;153=0;156=0;159=1;161=1;162=1;163=1;164=1;166=1;167=1;168=1;173=1;184=1;368=1;378=1;392=1;395=0;396=0;397=0;398=0;401=0;402=0;403=0;408=0;409=0;411=0;412=0;413=0;414=0;415=0;416=0;417=0;418=0;419=0;420=0;421=0;422=0;423=0;425=0;431=0;434=0;437=0;438=0;439=0;440=0;441=0;444=0;445=0;448=0;449=0;450=0;455=0;457=0;458=0;459=0;460=0;461=0;462=0;467=0;469=0;474=0;475=0;476=0;479=0;480=0;481=0;482=0;485=0;487=0;488=0;489=0;490=0;491=0;493=0;495=0;496=0;497=0;500=0;520=0;523=1;541=1;542=1;544=1;545=1;547=1;549=1;550=1;554=1;555=1;557=1;560=1;570=1;571=1;572=1;575=1;576=1;578=1;579=1;581=1;583=1</file>
+    </linehits>
+  </data>
+</report>

@@ -1,0 +1,113 @@
+unit uDataModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
+  Data.DB, FireDAC.Comp.Client, FireDAC.Phys.MySQL, FireDAC.Phys.MySQLDef,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
+  FireDAC.Comp.DataSet;
+
+type
+  TDataModule1 = class(TDataModule)
+    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    sql_alunos_: TFDQuery;
+    FDTransaction1: TFDTransaction;
+    FDConnection1: TFDConnection;
+    ds_alunos: TDataSource;
+    sql_alunos_id_aluno: TFDAutoIncField;
+    sql_alunos_nome_aluno: TStringField;
+    sql_alunos_senha_aluno: TMemoField;
+    sql_alunos_nascimento_aluno: TDateField;
+    sql_disciplinas_: TFDQuery;
+    ds_disciplinas: TDataSource;
+    sql_disciplinas_id_disciplina: TFDAutoIncField;
+    sql_disciplinas_nome_disciplina: TStringField;
+    sql_disciplinas_professor_disciplina: TStringField;
+    sql_aluno_: TFDQuery;
+    sql_aluno_id_aluno: TFDAutoIncField;
+    sql_aluno_nome_aluno: TStringField;
+    sql_aluno_senha_aluno: TMemoField;
+    sql_aluno_nascimento_aluno: TDateField;
+    sql_disciplinas_dia_semana: TIntegerField;
+    sql_periodo_ano_: TFDQuery;
+    sql_periodo_ano_ano: TIntegerField;
+    sql_disciplinas_alunos_: TFDQuery;
+    sql_disciplinas_alunos_nome_aluno: TStringField;
+    sql_disciplinas_alunos_semestre: TIntegerField;
+    sql_disciplinas_alunos_ano: TIntegerField;
+    sql_disciplinas_alunos_qtd_aula: TIntegerField;
+    ds_disciplinas_alunos: TDataSource;
+    sql_disciplinas_alunos_nome_disciplina: TStringField;
+    sql_disciplinas_sala: TStringField;
+    sql_disciplinas_horario: TStringField;
+    sql_disciplinas_validas_: TFDQuery;
+    sql_disciplinas_validas_nome_disciplina: TStringField;
+    sql_livre: TFDQuery;
+    mDisciplinas_: TFDMemTable;
+    mDisciplinas_id_aluno: TIntegerField;
+    mDisciplinas_id_disciplina: TIntegerField;
+    mDisciplinas_semestre: TIntegerField;
+    mDisciplinas_ano: TIntegerField;
+    mDisciplinas_qtd_aula: TIntegerField;
+    mDisciplinas_dia_semana: TIntegerField;
+    mDisciplinas_aprovado: TBooleanField;
+    sql_disciplinas_qtd_aula: TIntegerField;
+    dsDisciplinas: TDataSource;
+    sql_lista_espera: TFDQuery;
+    sql_lista_esperaid_aluno: TIntegerField;
+    sql_lista_esperaid_disciplina: TIntegerField;
+    sql_lista_esperaposicao_lista: TIntegerField;
+    sql_RN02: TFDQuery;
+    sql_RN02alunos_disciplina: TLargeintField;
+    sql_RN00: TFDQuery;
+    sql_RN00id_aluno_disciplina: TFDAutoIncField;
+    sql_RN00id_aluno: TIntegerField;
+    sql_RN00id_disciplina: TIntegerField;
+    sql_RN00semestre: TIntegerField;
+    sql_RN00ano: TIntegerField;
+    sql_RN00qtd_aula: TIntegerField;
+    sql_RN00dia_semana: TIntegerField;
+    sql_RN00aprovado: TBooleanField;
+    sql_RN00id_disciplina_1: TIntegerField;
+    sql_RN00nome_disciplina: TStringField;
+    sql_RN00professor_disciplina: TStringField;
+    sql_RN00dia_semana_1: TIntegerField;
+    sql_RN00sala: TStringField;
+    sql_RN00horario: TStringField;
+    sql_RN00qtd_aula_1: TIntegerField;
+    sql_RN01: TFDQuery;
+    sql_RN01qtd_credito: TFMTBCDField;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModule1: TDataModule1;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TDataModule1.DataModuleCreate(Sender: TObject);
+begin
+  FDConnection1.Params.Database := 'db_qsw';
+  FDConnection1.Params.UserName := 'root';
+  FDConnection1.Params.Password := '';
+
+  FDPhysMySQLDriverLink1.VendorLib := 'C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\Win32\Debug\lib\libmysql.dll';
+  FDConnection1.Connected := True;
+
+  if not mDisciplinas_.Active then
+    mDisciplinas_.CreateDataset;
+
+end;
+
+end.

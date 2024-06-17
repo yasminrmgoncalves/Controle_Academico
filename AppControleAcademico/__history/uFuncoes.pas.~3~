@@ -1,0 +1,8 @@
+unit uFuncoes;
+
+interface
+   type
+    VerificacoesRN = class(TMethod);
+implementation
+
+end.

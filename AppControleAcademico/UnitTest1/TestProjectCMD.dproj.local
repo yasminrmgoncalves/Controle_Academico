@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/06/16 13:02:38.000.992,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\Projects\UnitTest1\TestuInscricaoCMD.pas</Transaction>
+    <Transaction>2024/06/16 13:02:39.000.821,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uInscricao.pas</Transaction>
+    <Transaction>2024/06/16 13:04:32.000.989,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uPainelAluno.pas</Transaction>
+    <Transaction>2024/06/16 13:04:32.000.816,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uDataModule.pas</Transaction>
+    <Transaction>2024/06/16 13:04:32.000.894,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uPainelAdmin.pas</Transaction>
+    <Transaction>2024/06/16 15:33:47.000.377,C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uDataModule.pas=</Transaction>
+    <Transaction>2024/06/16 15:34:01.000.762,C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uPainelAdmin.pas=</Transaction>
+    <Transaction>2024/06/16 15:34:06.000.980,C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uPainelAluno.pas=</Transaction>
+    <Transaction>2024/06/16 15:37:11.000.911,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uPainelAdmin.pas</Transaction>
+    <Transaction>2024/06/16 15:38:50.000.543,C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uPainelAdmin.pas=</Transaction>
+    <Transaction>2024/06/17 01:24:59.202,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uDataModule.pas</Transaction>
+    <Transaction>2024/06/17 01:24:59.595,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uPainelAdmin.pas</Transaction>
+    <Transaction>2024/06/17 01:25:35.362,=C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uPainelAluno.pas</Transaction>
+  </Transactions>
+</BorlandProject>

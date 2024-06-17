@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{43E37AFD-85F9-4295-A0BA-1077C46628D2}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AppControleAcademico.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UnitTest1\TestProjectCMD.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AppControleAcademico">
+        <MSBuild Projects="AppControleAcademico.dproj"/>
+    </Target>
+    <Target Name="AppControleAcademico:Clean">
+        <MSBuild Projects="AppControleAcademico.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AppControleAcademico:Make">
+        <MSBuild Projects="AppControleAcademico.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestProjectCMD">
+        <MSBuild Projects="UnitTest1\TestProjectCMD.dproj"/>
+    </Target>
+    <Target Name="TestProjectCMD:Clean">
+        <MSBuild Projects="UnitTest1\TestProjectCMD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestProjectCMD:Make">
+        <MSBuild Projects="UnitTest1\TestProjectCMD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AppControleAcademico;TestProjectCMD"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AppControleAcademico:Clean;TestProjectCMD:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AppControleAcademico:Make;TestProjectCMD:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

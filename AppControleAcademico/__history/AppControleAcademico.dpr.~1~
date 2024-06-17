@@ -1,0 +1,20 @@
+program AppControleAcademico;
+
+uses
+  Vcl.Forms,
+  uMain in 'uMain.pas' {frmMain},
+  uLogin in 'uLogin.pas' {frmLogin},
+  uPainelAluno in 'uPainelAluno.pas' {frmPainelAluno},
+  uInscricao in 'uInscricao.pas' {frmInscricao};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TfrmLogin, frmLogin);
+  Application.CreateForm(TfrmPainelAluno, frmPainelAluno);
+  Application.CreateForm(TfrmInscricao, frmInscricao);
+  Application.Run;
+end.

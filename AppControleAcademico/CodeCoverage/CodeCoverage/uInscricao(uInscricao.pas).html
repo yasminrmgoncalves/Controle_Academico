@@ -1,0 +1,688 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Delphi CodeCoverage Coverage Report</title>
+<style type="text/css">
+body {max-width: max-content;margin: auto;}
+table {border-spacing:0;}
+table, td, th {border: 0;}
+td, th {background: white; margin: 0; padding: .5em 1em}
+table small { color: #777; }
+p, h1, h2, h3, th {font-family: verdana,arial,sans-serif; font-size: 10pt;}
+td {font-family: consolas,courier,monospace; font-size: 10pt;}
+thead, th {background: #808C98; color: white; }
+table th small { color: #ddd; }
+th[idx] {cursor: pointer; user-select: none;}
+table.o tr td:nth-child(1) {font-weight: bold;}
+table.o tr td:nth-child(2) {text-align: right;}
+table.o tr td {border-width: 1px;}
+table.s {width: calc(min(80em, 95vw));}
+table.s tr td {padding: .1em .5em; white-space: pre-wrap;}
+table.s tr td:first-child {text-align: right; font-weight: bold; vertical-align: top}
+table.s tr.notcovered td {background: #ddf;}
+table.s tr.nocodegen td {background: #ffe;}
+table.s tr.covered td {background: #cfc;}
+table.s tr.covered td:first-child {color: green;}
+table.s {border-width: 1px 0 1px 1px;}
+table.sum td { background-position: 50%; background-repeat: no-repeat; background-size: 90% 70%; }
+table.sum tr:nth-child(odd) td { background-color: #f4f4f4}
+table.sum tr:hover td, tr:hover td a { filter: invert(10%) }
+table.sum tr th {text-align:left; border: .5px solid #5d4e4c; height: 1em}
+table.sum tr td {text-align:right;}
+table.sum tr td:first-child {text-align:left;}
+table.sum thead th { position: sticky; top:0; }
+table.sum thead tr + tr th { position: sticky; top: calc(2.5em - 2px); }
+table.sum tfoot th { position: sticky; bottom:0; }
+table.sum tfoot th+th {text-align: right;}
+table.sum a, table.sum a:visited {color: #5d4e4c; text-decoration: none;}
+#nav {position: fixed;overflow: visible;left: min(calc(50% + 41em), calc(100% - 6em));padding: .1em .5em .1em .2em;background: white;box-shadow: 1px 1px 3px #888;}
+#nav div {opacity: .3; user-select: none; pointer-events: none;}
+#nav div.active {opacity: 1;	cursor: pointer;	pointer-events: initial;}
+#nav div.active:hover {color: #00A;}
+</style>
+</head>
+<body>
+<p>Coverage report for <bold>uInscricao (C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uInscricao.pas)</bold>.</p>
+<p>Generated at 17/06/2024 01:43:13 by <a href="https://github.com/DelphiCodeCoverage/DelphiCodeCoverage" target="_blank" title="DelphiCodeCoverage on GitHub">DelphiCodeCoverage</a> - an open source tool for Delphi Code Coverage.</p>
+<p>Statistics for C:\Users\yasmi\OneDrive\Documentos\Embarcadero\Studio\AppControleAcademico\uInscricao.pas</p>
+<table class="o"><tr><td>Number of lines covered<td>34<td rowspan=3 style="background: conic-gradient(#9fe098 21%, #eee 21%);width: 4.5em; border-radius: 50%"><tr><td>Number of lines with code gen<td>155<tr><td>Line coverage<td>21<small>.9</small>&nbsp;%</table>
+<br><br>
+<div id="nav"><div id="nav-prev">&#x25b2; Prev</div><div id="nav-next">&#x25bc; Next</div></div>
+<table class="s">
+<tr class="nocodegen"><td>1<td>unit uInscricao;
+<tr class="nocodegen"><td>2<td>
+<tr class="nocodegen"><td>3<td>interface
+<tr class="nocodegen"><td>4<td>
+<tr class="nocodegen"><td>5<td>uses
+<tr class="nocodegen"><td>6<td>  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+<tr class="nocodegen"><td>7<td>  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
+<tr class="nocodegen"><td>8<td>  Vcl.Imaging.pngimage, Data.DB, Vcl.Grids, Vcl.DBGrids, FireDAC.Stan.ExprFuncs,
+<tr class="nocodegen"><td>9<td>  FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Phys.SQLiteDef, FireDAC.Stan.Intf,
+<tr class="nocodegen"><td>10<td>  FireDAC.Phys, FireDAC.Phys.SQLite, FireDAC.Comp.Client;
+<tr class="nocodegen"><td>11<td>
+<tr class="nocodegen"><td>12<td>type
+<tr class="nocodegen"><td>13<td>  TfrmInscricao = class(TForm)
+<tr class="nocodegen"><td>14<td>    pnlPrincipal: TPanel;
+<tr class="nocodegen"><td>15<td>    pnlTitulo: TPanel;
+<tr class="nocodegen"><td>16<td>    Label1: TLabel;
+<tr class="nocodegen"><td>17<td>    img_incricao: TImage;
+<tr class="nocodegen"><td>18<td>    Label2: TLabel;
+<tr class="nocodegen"><td>19<td>    btnAdicionar: TPanel;
+<tr class="nocodegen"><td>20<td>    cbDisciplinas: TComboBox;
+<tr class="nocodegen"><td>21<td>    pnlInformacoesDisciplina: TPanel;
+<tr class="nocodegen"><td>22<td>    Label3: TLabel;
+<tr class="nocodegen"><td>23<td>    lbNomeDisciplina: TLabel;
+<tr class="nocodegen"><td>24<td>    lbProfessorDisciplina: TLabel;
+<tr class="nocodegen"><td>25<td>    lbDiaSemana: TLabel;
+<tr class="nocodegen"><td>26<td>    lbSala: TLabel;
+<tr class="nocodegen"><td>27<td>    lbHorario: TLabel;
+<tr class="nocodegen"><td>28<td>    gdDisciplinas: TDBGrid;
+<tr class="nocodegen"><td>29<td>    Label4: TLabel;
+<tr class="nocodegen"><td>30<td>    btnFinalizarInscricao: TPanel;
+<tr class="nocodegen"><td>31<td>    pnlListaEspera: TPanel;
+<tr class="nocodegen"><td>32<td>    Label5: TLabel;
+<tr class="nocodegen"><td>33<td>    btnNao: TPanel;
+<tr class="nocodegen"><td>34<td>    btnListaEspera: TPanel;
+<tr class="nocodegen"><td>35<td>    Panel1: TPanel;
+<tr class="nocodegen"><td>36<td>    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
+<tr class="nocodegen"><td>37<td>    procedure cbDisciplinasChange(Sender: TObject);
+<tr class="nocodegen"><td>38<td>    procedure btnAdicionarClick(Sender: TObject);
+<tr class="nocodegen"><td>39<td>    procedure btnFinalizarInscricaoClick(Sender: TObject);
+<tr class="nocodegen"><td>40<td>    procedure btnNaoClick(Sender: TObject);
+<tr class="nocodegen"><td>41<td>    procedure btnListaEsperaClick(Sender: TObject);
+<tr class="nocodegen"><td>42<td>    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+<tr class="nocodegen"><td>43<td>    procedure Panel1Click(Sender: TObject);
+<tr class="nocodegen"><td>44<td>  private
+<tr class="nocodegen"><td>45<td>    { Private declarations }
+<tr class="nocodegen"><td>46<td>  public
+<tr class="nocodegen"><td>47<td>    { Public declarations }
+<tr class="nocodegen"><td>48<td>    function VerificacoesRN: Boolean;
+<tr class="nocodegen"><td>49<td>    function VerificaRN00(id_aluno, dia_semana : Integer; out disciplina, horario: String):Boolean;
+<tr class="nocodegen"><td>50<td>    function VerificaRN01(id_aluno: Integer; out limite_credito: Integer):Boolean;
+<tr class="nocodegen"><td>51<td>    function VerificaRN02(id_disciplina: Integer): Boolean;
+<tr class="nocodegen"><td>52<td>    procedure CriaComponentesConexao;
+<tr class="nocodegen"><td>53<td>    procedure PostDisciplinas;
+<tr class="nocodegen"><td>54<td>    var
+<tr class="nocodegen"><td>55<td>      disci_listaEsp : Integer;
+<tr class="nocodegen"><td>56<td>      FConnection1: TFDConnection;  // Componente de conexão local - Criado para mockar os dados já existentes em banco
+<tr class="nocodegen"><td>57<td>      sql : TFDQuery; // Componente de execução de queries para verificação das Regras de Negócio
+<tr class="nocodegen"><td>58<td>  end;
+<tr class="nocodegen"><td>59<td>
+<tr class="nocodegen"><td>60<td>var
+<tr class="nocodegen"><td>61<td>  frmInscricao: TfrmInscricao;
+<tr class="nocodegen"><td>62<td>
+<tr class="nocodegen"><td>63<td>implementation
+<tr class="nocodegen"><td>64<td>
+<tr class="nocodegen"><td>65<td>uses
+<tr class="nocodegen"><td>66<td>  uDataModule ,uPainelAdmin;
+<tr class="nocodegen"><td>67<td>
+<tr class="nocodegen"><td>68<td>{$R *.dfm}
+<tr class="nocodegen"><td>69<td>
+<tr class="nocodegen"><td>70<td>procedure TfrmInscricao.btnAdicionarClick(Sender: TObject);
+<tr class="notcovered"><td>71<td>begin
+<tr class="notcovered"><td>72<td>  if cbDisciplinas.Text &lt;&gt; '' then
+<tr class="nocodegen"><td>73<td>  begin
+<tr class="notcovered"><td>74<td>    DataModule1.mDisciplinas_.Append;
+<tr class="nocodegen"><td>75<td>
+<tr class="notcovered"><td>76<td>    DataModule1.mDisciplinas_id_aluno.AsInteger := DataModule1.sql_alunos_id_aluno.AsInteger;
+<tr class="notcovered"><td>77<td>    DataModule1.mDisciplinas_id_disciplina.AsInteger := DataModule1.sql_disciplinas_id_disciplina.AsInteger;
+<tr class="notcovered"><td>78<td>    DataModule1.mDisciplinas_semestre.AsInteger := 1;
+<tr class="notcovered"><td>79<td>    DataModule1.mDisciplinas_ano.AsInteger := 2024;
+<tr class="notcovered"><td>80<td>    DataModule1.mDisciplinas_qtd_aula.AsInteger := DataModule1.sql_disciplinas_qtd_aula.AsInteger;
+<tr class="notcovered"><td>81<td>    DataModule1.mDisciplinas_dia_semana.AsInteger := DataModule1.sql_disciplinas_dia_semana.AsInteger;
+<tr class="notcovered"><td>82<td>    DataModule1.mDisciplinas_aprovado.AsBoolean := False;
+<tr class="notcovered"><td>83<td>    Datamodule1.mDisciplinas_.Post;
+<tr class="notcovered"><td>84<td>    DataModule1.mDisciplinas_.Refresh;
+<tr class="notcovered"><td>85<td>    DataModule1.mDisciplinas_.EnableControls;
+<tr class="notcovered"><td>86<td>    ShowMessage('Disciplina Adicionada');
+<tr class="nocodegen"><td>87<td>  end;
+<tr class="notcovered"><td>88<td>end;
+<tr class="nocodegen"><td>89<td>
+<tr class="nocodegen"><td>90<td>procedure TfrmInscricao.btnFinalizarInscricaoClick(Sender: TObject);
+<tr class="notcovered"><td>91<td>begin
+<tr class="notcovered"><td>92<td>  if VerificacoesRN then
+<tr class="nocodegen"><td>93<td>  begin
+<tr class="notcovered"><td>94<td>    PostDisciplinas;
+<tr class="notcovered"><td>95<td>    ShowMessage('Inscrições feitas com sucesso!');
+<tr class="notcovered"><td>96<td>    Close;
+<tr class="nocodegen"><td>97<td>  end;
+<tr class="nocodegen"><td>98<td>
+<tr class="notcovered"><td>99<td>end;
+<tr class="nocodegen"><td>100<td>
+<tr class="nocodegen"><td>101<td>procedure TfrmInscricao.btnListaEsperaClick(Sender: TObject);
+<tr class="notcovered"><td>102<td>begin
+<tr class="notcovered"><td>103<td>  DataModule1.sql_livre.Close;
+<tr class="notcovered"><td>104<td>  DataModule1.sql_livre.SQL.Clear;
+<tr class="notcovered"><td>105<td>  DataModule1.sql_livre.SQL.Text := 'select count(*) from tb_lista_espera where id_disciplina = :id_disciplina ';
+<tr class="notcovered"><td>106<td>  DataModule1.sql_livre.ParamByName('id_disciplina').AsInteger := disci_listaEsp;
+<tr class="notcovered"><td>107<td>  DataModule1.sql_livre.Open;
+<tr class="nocodegen"><td>108<td>
+<tr class="notcovered"><td>109<td>  DataModule1.sql_lista_espera_.Close;
+<tr class="notcovered"><td>110<td>  DataModule1.sql_lista_espera_.Open;
+<tr class="notcovered"><td>111<td>  DataModule1.sql_lista_espera_.Append;
+<tr class="notcovered"><td>112<td>  DataModule1.sql_lista_espera_id_aluno.AsInteger := DataModule1.sql_alunos_id_aluno.AsInteger;
+<tr class="notcovered"><td>113<td>  DataModule1.sql_lista_espera_id_disciplina.AsInteger := disci_listaEsp;
+<tr class="notcovered"><td>114<td>  DataModule1.sql_lista_espera_posicao_lista.AsInteger := DataModule1.sql_livre.Fields[0].Value + 1;
+<tr class="notcovered"><td>115<td>  DataModule1.sql_lista_espera_.Post;
+<tr class="nocodegen"><td>116<td>
+<tr class="notcovered"><td>117<td>  ShowMessage('Inserçao na lista de espera realizada. Sua posição é: ' + IntToStr(DataModule1.sql_livre.Fields[0].Value + 1));
+<tr class="notcovered"><td>118<td>  pnlListaEspera.Visible := False;
+<tr class="notcovered"><td>119<td>  pnlListaEspera.Enabled := False;
+<tr class="notcovered"><td>120<td>end;
+<tr class="nocodegen"><td>121<td>
+<tr class="nocodegen"><td>122<td>procedure TfrmInscricao.btnNaoClick(Sender: TObject);
+<tr class="notcovered"><td>123<td>begin
+<tr class="notcovered"><td>124<td>  pnlListaEspera.Visible := False;
+<tr class="notcovered"><td>125<td>  pnlListaEspera.Enabled := False;
+<tr class="notcovered"><td>126<td>end;
+<tr class="nocodegen"><td>127<td>
+<tr class="nocodegen"><td>128<td>procedure TfrmInscricao.cbDisciplinasChange(Sender: TObject);
+<tr class="nocodegen"><td>129<td>var
+<tr class="nocodegen"><td>130<td>  dia: Integer;
+<tr class="notcovered"><td>131<td>begin
+<tr class="notcovered"><td>132<td>  DataModule1.sql_disciplinas_.Close;
+<tr class="notcovered"><td>133<td>  DataModule1.sql_disciplinas_.ParamByName('nome').AsString := cbDisciplinas.Text;
+<tr class="notcovered"><td>134<td>  DataModule1.sql_disciplinas_.Open;
+<tr class="nocodegen"><td>135<td>
+<tr class="notcovered"><td>136<td>  lbNomeDisciplina.Caption := DataModule1.sql_disciplinas_nome_disciplina.AsString;
+<tr class="notcovered"><td>137<td>  lbProfessorDisciplina.Caption := DataModule1.sql_disciplinas_professor_disciplina.AsString;
+<tr class="notcovered"><td>138<td>  lbSala.Caption :=  DataModule1.sql_disciplinas_sala.AsString;
+<tr class="notcovered"><td>139<td>  lbHorario.Caption :=  DataModule1.sql_disciplinas_horario.AsString;
+<tr class="nocodegen"><td>140<td>
+<tr class="notcovered"><td>141<td>  dia := DataModule1.sql_disciplinas_dia_semana.AsInteger;
+<tr class="nocodegen"><td>142<td>
+<tr class="notcovered"><td>143<td>  case dia of
+<tr class="nocodegen"><td>144<td>    1:
+<tr class="notcovered"><td>145<td>      lbDiaSemana.Caption := 'Segunda-Feira';
+<tr class="nocodegen"><td>146<td>    2:
+<tr class="notcovered"><td>147<td>      lbDiaSemana.Caption := 'Terça-Feira';
+<tr class="nocodegen"><td>148<td>    3:
+<tr class="notcovered"><td>149<td>      lbDiaSemana.Caption := 'Quarta-Feira';
+<tr class="nocodegen"><td>150<td>    4:
+<tr class="notcovered"><td>151<td>      lbDiaSemana.Caption := 'Quinta-Feira';
+<tr class="nocodegen"><td>152<td>    5:
+<tr class="notcovered"><td>153<td>      lbDiaSemana.Caption := 'Sexta-Feira';
+<tr class="nocodegen"><td>154<td>  end;
+<tr class="nocodegen"><td>155<td>
+<tr class="notcovered"><td>156<td>end;
+<tr class="nocodegen"><td>157<td>
+<tr class="nocodegen"><td>158<td>procedure TfrmInscricao.CriaComponentesConexao;
+<tr class="covered"><td>159<td>begin
+<tr class="nocodegen"><td>160<td>  // Cria a instância do projeto (constructor) e cria os componentes de banco
+<tr class="covered"><td>161<td>  FConnection1 := TFDConnection.Create(nil);
+<tr class="covered"><td>162<td>  FConnection1.DriverName := 'SQLite';
+<tr class="covered"><td>163<td>  FConnection1.Params.Database := ':memory:';
+<tr class="covered"><td>164<td>  FConnection1.LoginPrompt := False;
+<tr class="nocodegen"><td>165<td>
+<tr class="covered"><td>166<td>  FConnection1.Connected := True;
+<tr class="covered"><td>167<td>  sql := TFDQuery.Create(nil);
+<tr class="covered"><td>168<td>  sql.Connection := FConnection1;
+<tr class="nocodegen"><td>169<td>
+<tr class="nocodegen"><td>170<td>  // Fazendo Mock dos dados presentes no banco
+<tr class="nocodegen"><td>171<td>
+<tr class="nocodegen"><td>172<td>  //CRIANDO TABELA QUE RELACIONA ALUNO E DISCIPLINA
+<tr class="covered"><td>173<td>  FConnection1.ExecSQL('CREATE TABLE `tb_aluno_disciplina` ( '
+<tr class="nocodegen"><td>174<td>                      +'  `id_aluno_disciplina` int(11) NOT NULL, '
+<tr class="nocodegen"><td>175<td>                      +'  `id_aluno` int(11) NOT NULL, '
+<tr class="nocodegen"><td>176<td>                      +'  `id_disciplina` int(11) NOT NULL, '
+<tr class="nocodegen"><td>177<td>                      +'  `semestre` int(11) NOT NULL, '
+<tr class="nocodegen"><td>178<td>                      +'  `ano` int(11) NOT NULL, '
+<tr class="nocodegen"><td>179<td>                      +'  `qtd_aula` int(11) NOT NULL, '
+<tr class="nocodegen"><td>180<td>                      +'  `dia_semana` int(11) NOT NULL, '
+<tr class="nocodegen"><td>181<td>                      +'  `aprovado` tinyint(1) NOT NULL '
+<tr class="nocodegen"><td>182<td>                      +')');
+<tr class="nocodegen"><td>183<td>  //INSERINDO DADOS NA TABELA
+<tr class="covered"><td>184<td>  FConnection1.ExecSQL('INSERT INTO `tb_aluno_disciplina` (`id_aluno_disciplina`, `id_aluno`, `id_disciplina`, `semestre`, `ano`, `qtd_aula`, `dia_semana`, `aprovado`) VALUES '
+<tr class="nocodegen"><td>185<td>                    +'(1, 1, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>186<td>                    +'(2, 2, 9, 1, 2023, 4, 6, 1), '
+<tr class="nocodegen"><td>187<td>                    +'(3, 18, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>188<td>                    +'(32, 2, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>189<td>                    +'(33, 3, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>190<td>                    +'(34, 4, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>191<td>                    +'(35, 5, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>192<td>                    +'(36, 6, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>193<td>                    +'(37, 7, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>194<td>                    +'(38, 8, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>195<td>                    +'(39, 9, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>196<td>                    +'(40, 10, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>197<td>                    +'(41, 11, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>198<td>                    +'(42, 12, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>199<td>                    +'(43, 14, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>200<td>                    +'(44, 15, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>201<td>                    +'(45, 16, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>202<td>                    +'(46, 17, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>203<td>                    +'(47, 18, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>204<td>                    +'(48, 19, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>205<td>                    +'(49, 20, 14, 2, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>206<td>                    +'(50, 1, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>207<td>                    +'(51, 2, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>208<td>                    +'(52, 3, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>209<td>                    +'(53, 4, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>210<td>                    +'(54, 5, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>211<td>                    +'(55, 6, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>212<td>                    +'(56, 7, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>213<td>                    +'(57, 8, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>214<td>                    +'(58, 9, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>215<td>                    +'(59, 10, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>216<td>                    +'(60, 11, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>217<td>                    +'(61, 12, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>218<td>                    +'(62, 13, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>219<td>                    +'(63, 14, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>220<td>                    +'(64, 15, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>221<td>                    +'(65, 16, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>222<td>                    +'(66, 17, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>223<td>                    +'(67, 18, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>224<td>                    +'(68, 19, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>225<td>                    +'(69, 20, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>226<td>                    +'(70, 21, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>227<td>                    +'(71, 22, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>228<td>                    +'(72, 23, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>229<td>                    +'(73, 24, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>230<td>                    +'(74, 25, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>231<td>                    +'(75, 26, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>232<td>                    +'(76, 27, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>233<td>                    +'(77, 28, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>234<td>                    +'(78, 29, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>235<td>                    +'(79, 30, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>236<td>                    +'(80, 31, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>237<td>                    +'(81, 32, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>238<td>                    +'(82, 33, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>239<td>                    +'(83, 34, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>240<td>                    +'(84, 35, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>241<td>                    +'(85, 36, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>242<td>                    +'(86, 37, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>243<td>                    +'(87, 38, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>244<td>                    +'(88, 39, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>245<td>                    +'(89, 40, 11, 1, 2022, 4, 1, 1), '
+<tr class="nocodegen"><td>246<td>                    +'(90, 63, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>247<td>                    +'(91, 62, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>248<td>                    +'(92, 61, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>249<td>                    +'(93, 60, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>250<td>                    +'(94, 59, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>251<td>                    +'(95, 58, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>252<td>                    +'(96, 57, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>253<td>                    +'(97, 56, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>254<td>                    +'(98, 55, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>255<td>                    +'(99, 10, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>256<td>                    +'(100, 11, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>257<td>                    +'(101, 12, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>258<td>                    +'(102, 13, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>259<td>                    +'(103, 14, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>260<td>                    +'(104, 15, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>261<td>                    +'(105, 16, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>262<td>                    +'(106, 17, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>263<td>                    +'(107, 18, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>264<td>                    +'(108, 19, 1, 1, 2024, 4, 3, 1), '
+<tr class="nocodegen"><td>265<td>                    +'(109, 63, 2, 1, 2024, 4, 5, 0), '
+<tr class="nocodegen"><td>266<td>                    +'(110, 17, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>267<td>                    +'(111, 63, 15, 1, 2024, 4, 1, 1), '
+<tr class="nocodegen"><td>268<td>                    +'(112, 63, 17, 1, 2024, 2, 4, 1), '
+<tr class="nocodegen"><td>269<td>                    +'(113, 17, 15, 1, 2024, 4, 1, 1), '
+<tr class="nocodegen"><td>270<td>                    +'(114, 17, 17, 1, 2024, 2, 4, 1), '
+<tr class="nocodegen"><td>271<td>                    +'(115, 63, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>272<td>                    +'(116, 17, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>273<td>                    +'(117, 62, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>274<td>                    +'(118, 61, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>275<td>                    +'(119, 60, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>276<td>                    +'(120, 58, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>277<td>                    +'(121, 57, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>278<td>                    +'(122, 56, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>279<td>                    +'(123, 55, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>280<td>                    +'(124, 54, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>281<td>                    +'(125, 53, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>282<td>                    +'(126, 52, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>283<td>                    +'(127, 51, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>284<td>                    +'(128, 50, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>285<td>                    +'(129, 49, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>286<td>                    +'(130, 48, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>287<td>                    +'(131, 47, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>288<td>                    +'(132, 46, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>289<td>                    +'(133, 45, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>290<td>                    +'(134, 44, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>291<td>                    +'(135, 43, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>292<td>                    +'(136, 42, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>293<td>                    +'(137, 41, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>294<td>                    +'(138, 40, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>295<td>                    +'(139, 39, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>296<td>                    +'(140, 38, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>297<td>                    +'(141, 37, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>298<td>                    +'(142, 24, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>299<td>                    +'(143, 23, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>300<td>                    +'(144, 22, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>301<td>                    +'(145, 21, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>302<td>                    +'(146, 20, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>303<td>                    +'(147, 19, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>304<td>                    +'(148, 18, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>305<td>                    +'(149, 16, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>306<td>                    +'(150, 15, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>307<td>                    +'(151, 14, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>308<td>                    +'(152, 13, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>309<td>                    +'(153, 12, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>310<td>                    +'(154, 10, 18, 1, 2024, 4, 2, 1), '
+<tr class="nocodegen"><td>311<td>                    +'(155, 61, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>312<td>                    +'(156, 60, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>313<td>                    +'(157, 58, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>314<td>                    +'(158, 57, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>315<td>                    +'(159, 56, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>316<td>                    +'(160, 55, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>317<td>                    +'(161, 54, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>318<td>                    +'(162, 53, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>319<td>                    +'(163, 52, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>320<td>                    +'(164, 51, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>321<td>                    +'(165, 50, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>322<td>                    +'(166, 49, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>323<td>                    +'(167, 48, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>324<td>                    +'(168, 47, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>325<td>                    +'(169, 46, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>326<td>                    +'(170, 45, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>327<td>                    +'(171, 44, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>328<td>                    +'(172, 43, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>329<td>                    +'(173, 42, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>330<td>                    +'(174, 41, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>331<td>                    +'(175, 40, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>332<td>                    +'(176, 39, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>333<td>                    +'(177, 38, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>334<td>                    +'(178, 37, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>335<td>                    +'(179, 24, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>336<td>                    +'(180, 23, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>337<td>                    +'(181, 22, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>338<td>                    +'(182, 21, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>339<td>                    +'(183, 20, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>340<td>                    +'(184, 19, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>341<td>                    +'(185, 18, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>342<td>                    +'(186, 16, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>343<td>                    +'(187, 10, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>344<td>                    +'(188, 9, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>345<td>                    +'(189, 8, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>346<td>                    +'(190, 7, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>347<td>                    +'(191, 6, 2, 1, 2024, 4, 5, 1), '
+<tr class="nocodegen"><td>348<td>                    +'(192, 63, 16, 1, 2024, 2, 4, 0), '
+<tr class="nocodegen"><td>349<td>                    +'(193, 1, 16, 1, 2024, 2, 4, 0), '
+<tr class="nocodegen"><td>350<td>                    +'(194, 1, 16, 1, 2024, 2, 4, 0), '
+<tr class="nocodegen"><td>351<td>                    +'(195, 2, 5, 1, 2024, 4, 5, 0), '
+<tr class="nocodegen"><td>352<td>                    +'(196, 1, 14, 1, 2024, 4, 1, 0), '
+<tr class="nocodegen"><td>353<td>                    +'(197, 4, 15, 1, 2024, 4, 1, 0), '
+<tr class="nocodegen"><td>354<td>                    +'(198, 2, 15, 1, 2024, 4, 1, 0), '
+<tr class="nocodegen"><td>355<td>                    +'(199, 4, 2, 1, 2024, 4, 5, 0), '
+<tr class="nocodegen"><td>356<td>                    +'(200, 3, 14, 1, 2024, 4, 1, 0), '
+<tr class="nocodegen"><td>357<td>                    +'(201, 17, 16, 1, 2024, 2, 4, 0), '
+<tr class="nocodegen"><td>358<td>                    +'(204, 1, 12, 1, 2024, 4, 2, 0), '
+<tr class="nocodegen"><td>359<td>                    +'(205, 1, 9, 1, 2024, 4, 5, 0), '
+<tr class="nocodegen"><td>360<td>                    +'(206, 4, 16, 1, 2024, 2, 4, 0), '
+<tr class="nocodegen"><td>361<td>                    +'(207, 4, 1, 1, 2024, 4, 3, 0), '
+<tr class="nocodegen"><td>362<td>                    +'(208, 4, 17, 1, 2024, 2, 4, 0), '
+<tr class="nocodegen"><td>363<td>                    +'(209, 2, 16, 1, 2024, 2, 4, 0), '
+<tr class="nocodegen"><td>364<td>                    +'(210, 59, 5, 1, 2024, 4, 5, 0), '
+<tr class="nocodegen"><td>365<td>                    +'(211, 59, 5, 1, 2024, 4, 5, 0), '
+<tr class="nocodegen"><td>366<td>                    +'(212, 63, 16, 1, 2024, 2, 4, 0);');
+<tr class="nocodegen"><td>367<td>//CRIANDO TABELA DISCIPLINA
+<tr class="covered"><td>368<td>    FConnection1.ExecSQL('CREATE TABLE `tb_disciplina` ( '
+<tr class="nocodegen"><td>369<td>    +'  `id_disciplina` int(11) NOT NULL, '
+<tr class="nocodegen"><td>370<td>    +'  `nome_disciplina` varchar(50) NOT NULL, '
+<tr class="nocodegen"><td>371<td>    +'  `professor_disciplina` varchar(50) NOT NULL, '
+<tr class="nocodegen"><td>372<td>    +'  `dia_semana` int(11) NOT NULL, '
+<tr class="nocodegen"><td>373<td>    +'  `sala` varchar(10) NOT NULL, '
+<tr class="nocodegen"><td>374<td>    +'  `horario` varchar(20) NOT NULL, '
+<tr class="nocodegen"><td>375<td>    +'  `qtd_aula` int(11) NOT NULL '
+<tr class="nocodegen"><td>376<td>    +')');
+<tr class="nocodegen"><td>377<td>// INSERINDO DADOS NA TABELA DISCIPLINA
+<tr class="covered"><td>378<td>    FConnection1.ExecSQL('INSERT INTO `tb_disciplina` (`id_disciplina`, `nome_disciplina`, `professor_disciplina`, `dia_semana`, `sala`, `horario`, `qtd_aula`) VALUES '
+<tr class="nocodegen"><td>379<td>    +'(1, ''Qualidade de Software'', ''Wilson Vendramel'', 3, ''A406'', ''19:00 - 22:35'', 4), '
+<tr class="nocodegen"><td>380<td>    +'(2, ''Gestão de Projetos'', ''André Luis'', 5, ''A408'', ''19:00 - 22:35'', 4), '
+<tr class="nocodegen"><td>381<td>    +'(5, ''Arquitetura de Software'', ''Cristina Correa'', 5, ''A501'', ''19:00 - 22:35'', 4), '
+<tr class="nocodegen"><td>382<td>    +'(6, ''Estrutura de Dados 2'', ''Rafael Muniz'', 4, ''A406'', ''19:00 - 22:35'', 4), '
+<tr class="nocodegen"><td>383<td>    +'(9, ''Estrutura de Dados 1'', ''Rafael Muniz'', 5, ''A402'', ''19:00 - 22:35'', 4), '
+<tr class="nocodegen"><td>384<td>    +'(11, ''Linguagem de Programacao I'', ''Talita Cipriano'', 1, ''A501'', ''19:00 - 22:35'', 4), '
+<tr class="nocodegen"><td>385<td>    +'(12, ''Linguagem de Programacao II'', ''Ana Paula'', 2, ''A402'', ''19:00 - 22:35'', 4), '
+<tr class="nocodegen"><td>386<td>    +'(13, ''Linguagem de Programacao III'', ''Flavio Amate'', 4, ''A406'', ''19:00 - 22:35'', 4), '
+<tr class="nocodegen"><td>387<td>    +'(14, ''Engenharia de Software'', ''Raphael Naves'', 1, ''A505'', ''19:00 - 22:35'', 4), '
+<tr class="nocodegen"><td>388<td>    +'(15, ''Servicos de Rede '', ''Luciano'', 1, ''A409'', ''19:00 - 22:35'', 4), '
+<tr class="nocodegen"><td>389<td>    +'(16, ''Metodologias Ageis'', ''Andre'', 4, ''A408'', ''19:00 - 20:40'', 2), '
+<tr class="nocodegen"><td>390<td>    +'(17, ''Projetos de Sistemas I '', ''Flavio'', 4, ''A406'', ''20:40 - 22:35'', 2), '
+<tr class="nocodegen"><td>391<td>    +'(18, ''Desenvolvimento Web'', ''Luis'', 2, ''A508'', ''19:00 - 22:35'', 4)');
+<tr class="covered"><td>392<td>end;
+<tr class="nocodegen"><td>393<td>
+<tr class="nocodegen"><td>394<td>procedure TfrmInscricao.FormClose(Sender: TObject; var Action: TCloseAction);
+<tr class="notcovered"><td>395<td>begin
+<tr class="notcovered"><td>396<td>  cbDisciplinas.Items.Clear;
+<tr class="notcovered"><td>397<td>  DataModule1.mDisciplinas_.EmptyDataSet;
+<tr class="notcovered"><td>398<td>end;
+<tr class="nocodegen"><td>399<td>
+<tr class="nocodegen"><td>400<td>procedure TfrmInscricao.Panel1Click(Sender: TObject);
+<tr class="notcovered"><td>401<td>begin
+<tr class="notcovered"><td>402<td>  DataModule1.mDisciplinas_.Delete;
+<tr class="notcovered"><td>403<td>end;
+<tr class="nocodegen"><td>404<td>
+<tr class="nocodegen"><td>405<td>procedure TfrmInscricao.PostDisciplinas;
+<tr class="nocodegen"><td>406<td>var
+<tr class="nocodegen"><td>407<td>  i : Integer;
+<tr class="notcovered"><td>408<td>begin
+<tr class="notcovered"><td>409<td>  for i := 0 to DataModule1.mDisciplinas_.RecordCount -1 do
+<tr class="nocodegen"><td>410<td>  begin
+<tr class="notcovered"><td>411<td>    DataModule1.sql_aluno_disciplina_.Close;
+<tr class="notcovered"><td>412<td>    DataModule1.sql_aluno_disciplina_.Open;
+<tr class="notcovered"><td>413<td>    DataModule1.sql_aluno_disciplina_.Insert;
+<tr class="notcovered"><td>414<td>    DataModule1.sql_aluno_disciplina_id_disciplina.AsInteger := DataModule1.mDisciplinas_id_disciplina.AsInteger;
+<tr class="notcovered"><td>415<td>    DataModule1.sql_aluno_disciplina_id_aluno.AsInteger := DataModule1.mDisciplinas_id_aluno.AsInteger;
+<tr class="notcovered"><td>416<td>    DataModule1.sql_aluno_disciplina_semestre.AsInteger := DataModule1.mDisciplinas_semestre.AsInteger;
+<tr class="notcovered"><td>417<td>    DataModule1.sql_aluno_disciplina_ano.AsInteger := DataModule1.mDisciplinas_ano.AsInteger;
+<tr class="notcovered"><td>418<td>    DataModule1.sql_aluno_disciplina_qtd_aula.AsInteger := DataModule1.mDisciplinas_qtd_aula.AsInteger;
+<tr class="notcovered"><td>419<td>    DataModule1.sql_aluno_disciplina_dia_semana.AsInteger := DataModule1.mDisciplinas_dia_semana.AsInteger;
+<tr class="notcovered"><td>420<td>    DataModule1.sql_aluno_disciplina_aprovado.AsBoolean := DataModule1.mDisciplinas_aprovado.AsBoolean;
+<tr class="notcovered"><td>421<td>    DataModule1.sql_aluno_disciplina_.Post;
+<tr class="notcovered"><td>422<td>    DataModule1.mDisciplinas_.Next;
+<tr class="notcovered"><td>423<td>  end;
+<tr class="nocodegen"><td>424<td>
+<tr class="notcovered"><td>425<td>end;
+<tr class="nocodegen"><td>426<td>
+<tr class="nocodegen"><td>427<td>function TfrmInscricao.VerificacoesRN: Boolean;
+<tr class="nocodegen"><td>428<td>var
+<tr class="nocodegen"><td>429<td>  i, limite_credito, choque_horarios : Integer;
+<tr class="nocodegen"><td>430<td>  disciplina, horario : String;
+<tr class="notcovered"><td>431<td>begin
+<tr class="nocodegen"><td>432<td>// verificações das regras de negócio
+<tr class="nocodegen"><td>433<td>
+<tr class="notcovered"><td>434<td>  for i := 0 to DataModule1.mDisciplinas_.RecordCount -1  do
+<tr class="nocodegen"><td>435<td>  begin
+<tr class="nocodegen"><td>436<td>    //Traz informações da disciplina para mostrar nas mensagens
+<tr class="notcovered"><td>437<td>    DataModule1.sql_livre.Close;
+<tr class="notcovered"><td>438<td>    DataModule1.sql_livre.SQL.Clear;
+<tr class="notcovered"><td>439<td>    DataModule1.sql_livre.SQL.Text := 'select * from tb_disciplina where id_disciplina = :id_disciplina ';
+<tr class="notcovered"><td>440<td>    DataModule1.sql_livre.ParamByName('id_disciplina').AsInteger := DataModule1.mDisciplinas_id_disciplina.AsInteger;
+<tr class="notcovered"><td>441<td>    DataModule1.sql_livre.Open;
+<tr class="nocodegen"><td>442<td>
+<tr class="nocodegen"><td>443<td>     //Chama função de verificação da RN01:
+<tr class="notcovered"><td>444<td>    if VerificaRN01(DataModule1.mDisciplinas_id_aluno.AsInteger,limite_credito) then
+<tr class="notcovered"><td>445<td>      ShowMessage('Limite de Crédito de ' + IntTOStr(limite_credito) + ' disponível')
+<tr class="nocodegen"><td>446<td>    else
+<tr class="nocodegen"><td>447<td>    begin
+<tr class="notcovered"><td>448<td>     ShowMessage('Limite de Crédito atingido!');
+<tr class="notcovered"><td>449<td>     DataModule1.mDisciplinas_.Delete;
+<tr class="notcovered"><td>450<td>     Exit;
+<tr class="nocodegen"><td>451<td>    end;
+<tr class="nocodegen"><td>452<td>
+<tr class="nocodegen"><td>453<td>
+<tr class="nocodegen"><td>454<td>    //Chama função de verificação da RN00:
+<tr class="notcovered"><td>455<td>    if VerificaRN02(DataModule1.mDisciplinas_id_disciplina.AsInteger) = False then
+<tr class="nocodegen"><td>456<td>    begin
+<tr class="notcovered"><td>457<td>     ShowMessage('A turma da disciplina '+ DataModule1.sql_livre.FieldByName('nome_disciplina').AsString + ' atingiu valor maximo de alunos. Entre na lista de espera para se inscrever na disciplina.');
+<tr class="notcovered"><td>458<td>     Result := False;
+<tr class="notcovered"><td>459<td>     disci_listaEsp := DataModule1.mDisciplinas_id_disciplina.AsInteger;
+<tr class="notcovered"><td>460<td>     pnlListaEspera.Visible := True;
+<tr class="notcovered"><td>461<td>     DataModule1.mDisciplinas_.Delete;
+<tr class="notcovered"><td>462<td>     Exit;
+<tr class="nocodegen"><td>463<td>    end;
+<tr class="nocodegen"><td>464<td>
+<tr class="nocodegen"><td>465<td>
+<tr class="nocodegen"><td>466<td>    //Chama função de verificação da RN00:
+<tr class="notcovered"><td>467<td>    if VerificaRN00(DataModule1.mDisciplinas_id_aluno.AsInteger, DataModule1.mDisciplinas_dia_semana.AsInteger, disciplina, horario) = False then
+<tr class="nocodegen"><td>468<td>    begin
+<tr class="notcovered"><td>469<td>      ShowMessage('Há choque de horarios entre as disciplinas escolhidas. A disciplina '
+<tr class="nocodegen"><td>470<td>          + DataModule1.sql_livre.FieldByName('nome_disciplina').AsString + ' de horário: '
+<tr class="nocodegen"><td>471<td>          + DataModule1.sql_livre.FieldByName('horario').AsString + ' conflita com a disciplina '
+<tr class="nocodegen"><td>472<td>          + disciplina + ' de horário: '
+<tr class="nocodegen"><td>473<td>          + horario);
+<tr class="notcovered"><td>474<td>      Result := False;
+<tr class="notcovered"><td>475<td>      DataModule1.mDisciplinas_.Delete;
+<tr class="notcovered"><td>476<td>      Exit;
+<tr class="nocodegen"><td>477<td>    end;
+<tr class="nocodegen"><td>478<td>
+<tr class="notcovered"><td>479<td>    DataModule1.mDisciplinas_.Next;
+<tr class="notcovered"><td>480<td>  end;
+<tr class="notcovered"><td>481<td>  Result := True;
+<tr class="notcovered"><td>482<td>end;
+<tr class="nocodegen"><td>483<td>
+<tr class="nocodegen"><td>484<td>function TfrmInscricao.VerificaRN00(id_aluno, dia_semana: Integer; out disciplina, horario: String): Boolean;
+<tr class="notcovered"><td>485<td>begin
+<tr class="nocodegen"><td>486<td>// VERIFICA RN00 - Choque de horáros entre as disciplinas
+<tr class="notcovered"><td>487<td>  DataModule1.DataModuleCreate(nil);
+<tr class="notcovered"><td>488<td>  DataModule1.sql_RN00.Close;
+<tr class="notcovered"><td>489<td>  DataModule1.sql_RN00.ParamByName('id_aluno').AsInteger := id_aluno;
+<tr class="notcovered"><td>490<td>  DataModule1.sql_RN00.ParamByName('dia_semana').AsInteger := dia_semana;
+<tr class="notcovered"><td>491<td>  DataModule1.sql_RN00.Open;
+<tr class="nocodegen"><td>492<td>
+<tr class="notcovered"><td>493<td>  if DataModule1.sql_RN00.RecordCount &gt; 0 then
+<tr class="nocodegen"><td>494<td>  begin
+<tr class="notcovered"><td>495<td>    disciplina := DataModule1.sql_RN00nome_disciplina.AsString;
+<tr class="notcovered"><td>496<td>    horario := DataModule1.sql_RN00horario.AsString;
+<tr class="notcovered"><td>497<td>    Result := False;
+<tr class="nocodegen"><td>498<td>  end
+<tr class="nocodegen"><td>499<td>  else
+<tr class="notcovered"><td>500<td>    Result := True;
+<tr class="nocodegen"><td>501<td>//  CriaComponentesConexao;
+<tr class="nocodegen"><td>502<td>//  sql.SQL.Text :=  'select * from tb_aluno_disciplina tad '
+<tr class="nocodegen"><td>503<td>//                  +'left join tb_disciplina td on td.id_disciplina = tad.id_disciplina '
+<tr class="nocodegen"><td>504<td>//                  +'where tad.id_aluno = :id_aluno '
+<tr class="nocodegen"><td>505<td>//                  +'and tad.semestre = 1 and tad.ano = 2024 and tad.dia_semana = :dia_semana '
+<tr class="nocodegen"><td>506<td>//                  +'and tad.qtd_aula &gt; 2'; // sql de verificação implementada no método
+<tr class="nocodegen"><td>507<td>//  sql.ParamByName('id_aluno').AsInteger := id_aluno;
+<tr class="nocodegen"><td>508<td>//  sql.ParamByName('dia_semana').AsInteger := dia_semana;
+<tr class="nocodegen"><td>509<td>//  sql.Open;
+<tr class="nocodegen"><td>510<td>//
+<tr class="nocodegen"><td>511<td>//  if sql.RecordCount &gt; 0 then
+<tr class="nocodegen"><td>512<td>//  begin
+<tr class="nocodegen"><td>513<td>//    disciplina := sql.FieldByName('nome_disciplina').AsString;
+<tr class="nocodegen"><td>514<td>//    horario := sql.FieldByName('horario').AsString;
+<tr class="nocodegen"><td>515<td>//    Result := False;
+<tr class="nocodegen"><td>516<td>//  end
+<tr class="nocodegen"><td>517<td>//  else
+<tr class="nocodegen"><td>518<td>//    Result := True;
+<tr class="nocodegen"><td>519<td>
+<tr class="notcovered"><td>520<td>end;
+<tr class="nocodegen"><td>521<td>
+<tr class="nocodegen"><td>522<td>function TfrmInscricao.VerificaRN01(id_aluno: Integer; out limite_credito: Integer): Boolean;
+<tr class="covered"><td>523<td>begin
+<tr class="nocodegen"><td>524<td>// VERIFICA RN01 - Quantidade de céditos do aluno
+<tr class="nocodegen"><td>525<td>//  DataModule1.sql_RN01.Close;
+<tr class="nocodegen"><td>526<td>//  DataModule1.sql_RN01.ParamByName('id_aluno').AsInteger := id_aluno;
+<tr class="nocodegen"><td>527<td>//  DataModule1.sql_RN01.Open;
+<tr class="nocodegen"><td>528<td>//
+<tr class="nocodegen"><td>529<td>//  if DataModule1.sql_RN01qtd_credito.AsInteger &gt; 20 then
+<tr class="nocodegen"><td>530<td>//  begin
+<tr class="nocodegen"><td>531<td>//    limite_credito := 0;
+<tr class="nocodegen"><td>532<td>//    Result := False;
+<tr class="nocodegen"><td>533<td>//  end
+<tr class="nocodegen"><td>534<td>//  else
+<tr class="nocodegen"><td>535<td>//  begin
+<tr class="nocodegen"><td>536<td>//    limite_credito := 20 - DataModule1.sql_RN01qtd_credito.AsInteger;
+<tr class="nocodegen"><td>537<td>//    Result := True;
+<tr class="nocodegen"><td>538<td>//  end;
+<tr class="nocodegen"><td>539<td>
+<tr class="nocodegen"><td>540<td>//  id_aluno_rn01 := 17; // aluno 'Lucia' que não tem mais limite de crédito
+<tr class="covered"><td>541<td>  CriaComponentesConexao;
+<tr class="covered"><td>542<td>  sql.SQL.Text := 'select sum(tad.qtd_aula) as qtd_credito from tb_aluno_disciplina tad where tad.id_aluno = :id_aluno'
+<tr class="nocodegen"><td>543<td>                      +' and tad.ano = 2024 and semestre = 1'; // sql de verificação implementada no método
+<tr class="covered"><td>544<td>  sql.ParamByName('id_aluno').AsInteger := id_aluno;
+<tr class="covered"><td>545<td>  sql.Open;
+<tr class="nocodegen"><td>546<td>
+<tr class="covered"><td>547<td>    if sql.Fields[0].AsInteger &gt; 20 then
+<tr class="nocodegen"><td>548<td>  begin
+<tr class="covered"><td>549<td>    limite_credito := 0;
+<tr class="covered"><td>550<td>    Result := False;
+<tr class="nocodegen"><td>551<td>  end
+<tr class="nocodegen"><td>552<td>  else
+<tr class="nocodegen"><td>553<td>  begin
+<tr class="covered"><td>554<td>    limite_credito := 20 - sql.Fields[0].AsInteger;
+<tr class="covered"><td>555<td>    Result := True;
+<tr class="nocodegen"><td>556<td>  end;
+<tr class="covered"><td>557<td>end;
+<tr class="nocodegen"><td>558<td>
+<tr class="nocodegen"><td>559<td>function TfrmInscricao.VerificaRN02(id_disciplina: Integer): Boolean;
+<tr class="covered"><td>560<td>begin
+<tr class="nocodegen"><td>561<td>//  DataModule1.sql_RN02.Close;
+<tr class="nocodegen"><td>562<td>//  DataModule1.sql_RN02.ParamByName('id_disciplina').AsInteger  := id_disciplina;
+<tr class="nocodegen"><td>563<td>//  DataModule1.sql_RN02.Open;
+<tr class="nocodegen"><td>564<td>//
+<tr class="nocodegen"><td>565<td>//  if DataModule1.sql_RN02.Fields[0].AsInteger &gt;= 40 then
+<tr class="nocodegen"><td>566<td>//    Result := False
+<tr class="nocodegen"><td>567<td>//  else
+<tr class="nocodegen"><td>568<td>//    Result := True;
+<tr class="nocodegen"><td>569<td>   // disciplina de web com 40 alunos
+<tr class="covered"><td>570<td>  CriaComponentesConexao;
+<tr class="covered"><td>571<td>  sql.SQL.Clear;
+<tr class="covered"><td>572<td>  sql.SQL.Text := 'select count(*) as alunos_disciplina from tb_aluno_disciplina tad '
+<tr class="nocodegen"><td>573<td>                      +'left join tb_disciplina td on tad.id_disciplina = td.id_disciplina '
+<tr class="nocodegen"><td>574<td>                      +'where td.id_disciplina = :id_disciplina and tad.ano = 2024'; // sql de verificação implementada no método
+<tr class="covered"><td>575<td>  sql.ParamByName('id_disciplina').AsInteger := id_disciplina;
+<tr class="covered"><td>576<td>  sql.Open;
+<tr class="nocodegen"><td>577<td>
+<tr class="covered"><td>578<td>  if sql.Fields[0].AsInteger &gt;=40 then
+<tr class="covered"><td>579<td>    Result := False
+<tr class="nocodegen"><td>580<td>  else
+<tr class="covered"><td>581<td>    Result := True;
+<tr class="nocodegen"><td>582<td>
+<tr class="covered"><td>583<td>end;
+<tr class="nocodegen"><td>584<td>
+<tr class="nocodegen"><td>585<td>end.
+</table>
+<script>(function () {
+var starts = [],prev = document.getElementById("nav-prev"),next = document.getElementById("nav-next");
+(function () {
+var p;
+document.querySelectorAll("table.s tr").forEach(r => {
+if (r.classList.contains("notcovered")) {
+if (!p) starts.push(r);
+p = r;
+} else { p = null }
+})
+})();
+function findPrev() {
+var y = prev.getBoundingClientRect().top - 4;
+for (var i=starts.length-1; i>=0; i--) {
+if (starts[i].getBoundingClientRect().top < y) return starts[i]
+}
+}
+function findNext() {
+var y = next.getBoundingClientRect().top + 4;
+for (var i=0; i<starts.length; i++) {
+if (starts[i].getBoundingClientRect().top > y) return starts[i];
+}
+}
+function onScroll() {
+prev.setAttribute("class", findPrev() ? "active" : "");
+next.setAttribute("class", findNext() ? "active" : "");
+onScroll.pending = 0;
+}
+document.addEventListener("scroll", function() {
+if (!onScroll.pending) { onScroll.pending = requestAnimationFrame(onScroll) }
+});
+onScroll();
+function scrollTo(row) {
+if (row) window.scrollTo({ behavior: "smooth", top: window.scrollY+row.getBoundingClientRect().top-prev.getBoundingClientRect().top });
+}
+next.addEventListener("click", () => scrollTo(findNext()) );
+prev.addEventListener("click", () => scrollTo(findPrev()) );
+})();</script>
+<script>
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+const comparer = (idx, asc) => (a, b) => ((v1, v2) =>!isNaN(parseFloat(v1 || "-")) && !isNaN(parseFloat(v2 || "-")) ? parseFloat(v1)-parseFloat(v2) : v1.toString().localeCompare(v2))(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+document.querySelectorAll("thead th[idx]").forEach(th => th.addEventListener("click", (() => {
+	const table = th.closest("table").querySelector("tbody");
+	Array.from(table.querySelectorAll("tr"))
+		.sort(comparer(+th.getAttribute("idx"), this.asc = !this.asc))
+		.forEach(tr => table.appendChild(tr) );
+	})));
+</script>
+</body>
+</html>
